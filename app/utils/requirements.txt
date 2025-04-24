@@ -1,0 +1,49 @@
+fastapi>=0.100.0,<0.110.0
+uvicorn[standard]>=0.23.0,<0.25.0
+pydantic[email]>=1.10.0,<2.0.0 # Specify v1 or v2 as needed by dependencies
+python-dotenv>=1.0.0,<2.0.0
+loguru>=0.7.0,<0.8.0
+
+# LangChain Core & Providers
+langchain>=0.1.0,<0.2.0
+langchain-openai>=0.1.0,<0.2.0
+langchain-google-genai>=0.1.0,<0.2.0 # If using Gemini
+langchain-groq>=0.1.0,<0.2.0        # If using Groq
+langchain-community>=0.0.20,<0.1.0  # For Chroma, loaders etc.
+
+# Vector Stores
+chromadb>=0.4.0,<0.5.0 # Or other vector store clients (faiss-cpu, pinecone-client)
+
+# Document Loaders (choose needed ones)
+unstructured[pdf]>=0.10.0,<0.12.0 # For PDFs
+# unstructured # Basic unstructured
+# pypdf # Alternative PDF loader
+
+# Caching
+redis>=5.0.0,<6.0.0
+aioredis>=2.0.0,<3.0.0
+
+# Storage
+boto3>=1.28.0,<1.30.0
+aiobotocore>=2.7.0,<2.9.0
+
+# Observability
+opentelemetry-api>=1.20.0,<1.22.0
+opentelemetry-sdk>=1.20.0,<1.22.0
+opentelemetry-exporter-otlp-proto-grpc>=1.20.0,<1.22.0 # Or http exporter
+opentelemetry-instrumentation-fastapi>=0.41b0,<0.43b0
+opentelemetry-instrumentation-httpx>=0.41b0,<0.43b0
+opentelemetry-instrumentation-redis>=0.41b0,<0.43b0
+# opentelemetry-instrumentation-langchain # If available
+
+# Metrics
+prometheus-fastapi-instrumentator>=6.0.0,<7.0.0
+prometheus-client>=0.17.0,<0.18.0 # Dependency of instrumentator
+
+# Security
+slowapi>=0.1.8,<0.2.0 # Rate limiting
+# python-jose[cryptography]>=3.3.0,<3.4.0 # For JWT if implementing full OAuth2
+# passlib[bcrypt]>=1.7.0,<1.8.0 # For password hashing
+
+# HTTP Client (often needed by Langchain)
+httpx>=0.25.0,<0.27.0
